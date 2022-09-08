@@ -12,6 +12,12 @@
     footer {
         background-color: white;
     }
+    #portfolio-links-start, #app-links-start {
+        padding-left: 20px;
+    }
+    .nav-item {
+        padding-right: 30px;
+    }
 </style>
 <body>
     <header>
@@ -24,15 +30,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <li class="nav-item nav-app-link" id="app-links-start">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-app-link">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item nav-portfolio-link" id="portfolio-links-start">
+                            <p><a class="nav-link text-dark" href="https://github.com/dannypellatt">Portfolio Website</a></p>
+                        </li>
+                        <li class="nav-item nav-portfolio-link">
+                            <p><a class="nav-link text-dark" href="https://github.com/dannypellatt">Github</a></p>
+                        </li>
+                        <li class="nav-item nav-portfolio-link">
+                            <p><a class="nav-link text-dark" href="https://dannypellattresume.netlify.app/">Resume</a></p>
                         </li>
                     </ul>
                 </div>
             </div>
+
+
         </nav>
     </header>
     <div class="container">

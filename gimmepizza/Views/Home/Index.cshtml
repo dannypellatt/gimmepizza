@@ -1,9 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model gimmepizza.Models.pizzaModel 
+
+<style>
+
+    @*START body SECTION*@
+
+    body {
+        background: url(/pizzabackground.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color: white;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    @*END body SECTION*@
+
+</style>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h1>gimmepizza.</h1>
+    <br /><br />
+</div>
+
+<div>
+    <p>Did you know...</p>
+    <p>One 18 inch pizza is actually bigger than two 12 inch pizzas!</p>
+    <p>(254" vs 226")</p>
+    <p>How much pizza are you really getting?</p>
+</div>
+
+<div class="temp-main-element temp-main-right calculator">
+    <h3>Calculator:</h3>
+    <br />
+    <form asp-action="Index">
+        <label>Pizza Size in Inches:</label>
+        <p><input type="number" asp-for="Size" /></p>
+        <br />
+        <label>Number of Pizzas:</label>
+        <p><input type="number" asp-for="Quantity" /></p>
+        <br />
+        @*<label>Price of Pizzas:</label>
+        <p><input type="number" asp-for="Price" /></p>
+        <br />*@
+
+        <p><input type="submit" value="Calculate" asp-for="Calculate" /></p>
+        <div>
+            <div>
+                <label>Total Square Inches of Pizza:</label>
+                <p><input type="number" asp-for="@ViewData["result"]" /></p>
+            </div>
+            @*<div>
+                <label>Price per Square Inch:</label>
+                <p><input type="number" asp-for="@ViewData["cost"]" /></p>
+            </div>*@
+        </div>
+    </form>
 </div>
 

@@ -13,11 +13,6 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-
     public IActionResult Privacy()
     {
         return View();
@@ -27,6 +22,27 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult Index(pizzaModel cal)
+    {
+        int a = cal.Size;
+        int b = cal.Quantity;
+        //int c = cal.Price;
+
+        int radius = a / 2;
+        double pi = 3.14;
+
+        //if (c != 0)
+        //{
+        //    cal.CostPerInch = c / (int)((pi * (radius * radius)) * b);
+        //}
+
+        cal.Result = (int)((pi * (radius * radius)) * b);
+        
+        ViewData["result"] = cal.Result;
+        //ViewData["cost"] = cal.CostPerInch;
+        return View();
     }
 }
 
